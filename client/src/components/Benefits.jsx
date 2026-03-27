@@ -5,15 +5,15 @@ import { FaCheckCircle } from 'react-icons/fa';
 const benefits = [
   "Get custom next steps for your goals.",
   "Follow clear, structured action plans.",
-  "See urgency and deadlines instantly."
+  "See Urgency and deadlines instantly."
 ];
 
 export default function Benefits() {
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: { 
-      opacity: 1, 
-      transition: { staggerChildren: 0.15 } 
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.15 }
     }
   };
 
@@ -26,8 +26,8 @@ export default function Benefits() {
     <section className="py-24 bg-white text-primary">
       <div className="w-full max-w-[1200px] mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-          
-          <motion.div 
+
+          <motion.div
             className="order-2 lg:order-0"
             variants={containerVariants}
             initial="hidden"
@@ -48,7 +48,7 @@ export default function Benefits() {
             </ul>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             className="w-full order-1 lg:order-1"
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -56,15 +56,15 @@ export default function Benefits() {
             transition={{ duration: 0.6 }}
           >
             <div className="relative w-full pt-[66.66%] rounded-[24px] overflow-hidden shadow-xl">
-              <img 
-                src="https://cdn.prod.website-files.com/69c6b85da80e50c8474e5a23/69c6c11805ff3a0be9b39b64_Wooden_sign_board_202603272309.jpeg" 
-                loading="lazy" 
-                alt="Wooden sign board" 
+              <img
+                src="https://cdn.prod.website-files.com/69c6b85da80e50c8474e5a23/69c6c11805ff3a0be9b39b64_Wooden_sign_board_202603272309.jpeg"
+                loading="lazy"
+                alt="Wooden sign board"
                 className="absolute inset-0 w-full h-full object-cover rounded-[24px]"
               />
             </div>
           </motion.div>
-          
+
         </div>
       </div>
     </section>
