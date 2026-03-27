@@ -1,0 +1,241 @@
+.navbar {
+  position: fixed;
+  width: 100%;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s;
+}
+
+.navbar-container {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+  .navbar-container { padding: 0 1.5rem; }
+}
+
+@media (min-width: 1024px) {
+  .navbar-container { padding: 0 2rem; }
+}
+
+.navbar-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 5rem;
+}
+
+.navbar-logo {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.logo-icon {
+  color: var(--color-secondary);
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.logo-text {
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: -0.025em;
+  color: var(--color-text-base);
+}
+
+.navbar-links-desktop {
+  display: none;
+  align-items: center;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .navbar-links-desktop { display: flex; }
+}
+
+.nav-link {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-base);
+  transition: color 0.2s;
+  padding: 0.5rem 0;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+}
+
+.dropdown-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.dropdown-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.nav-dropdown-wrapper {
+  position: relative;
+}
+
+.nav-dropdown-menu {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  margin-top: 0.5rem;
+  width: 16rem;
+  background-color: var(--color-inverse);
+  color: var(--color-text-inverse);
+  border-radius: 0.75rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  padding: 0.5rem 0;
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.nav-dropdown-menu.is-open {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  transition: background-color 0.2s;
+}
+
+.dropdown-item:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.dropdown-item-icon {
+  background-color: var(--color-secondary);
+  color: #ffffff;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.dropdown-title {
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.dropdown-desc {
+  font-size: 0.75rem;
+  color: var(--color-text-inverse-muted);
+}
+
+.navbar-action-desktop {
+  display: none;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .navbar-action-desktop { display: flex; }
+}
+
+.btn-primary {
+  background-color: var(--color-secondary);
+  color: #ffffff;
+  padding: 0.625rem 1.25rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: all 0.2s;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+.btn-primary:active {
+  transform: scale(0.95);
+}
+
+.navbar-mobile-toggle {
+  display: flex;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .navbar-mobile-toggle { display: none; }
+}
+
+.mobile-toggle-btn {
+  color: var(--color-text-base);
+  padding: 0.5rem;
+}
+
+.mobile-toggle-btn:hover {
+  color: #ffffff;
+}
+
+.navbar-mobile-menu {
+  display: none; 
+  background-color: #050510;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  height: 0;
+  opacity: 0;
+  transition: height 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+@media (max-width: 767px) {
+  .navbar-mobile-menu {
+    display: block;
+  }
+}
+
+.navbar-mobile-menu.is-open {
+  height: auto;
+  opacity: 1;
+}
+
+.mobile-menu-inner {
+  padding: 0.5rem 1rem 1.5rem;
+}
+
+.mobile-link {
+  display: block;
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.mobile-action-wrapper {
+  padding: 0.75rem;
+}
+
+.mobile-full-btn {
+  width: 100%;
+}

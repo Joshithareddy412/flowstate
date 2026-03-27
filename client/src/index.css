@@ -1,17 +1,14 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-@theme {
-  --color-page: #ece7e0;
-  --color-inverse: #151413;
-  --color-secondary: #ffffff;
+:root {
+  --color-page: #000000;
+  --color-inverse: #dfdbd3;
+  --color-secondary: #3b4b3b;
   
-  --color-text-base: #151413;
-  --color-text-inverse: #ece7e0;
-  --color-text-muted: rgba(21, 20, 19, 0.6);
-  --color-text-inverse-muted: rgba(236, 231, 224, 0.6);
-
-  --color-primary: #151413;
-  --color-primary-inverse: #ece7e0;
+  --color-text-base: #f3f3f3;
+  --color-text-inverse: #000000;
+  --color-text-muted: rgba(243, 243, 243, 0.6);
+  --color-text-inverse-muted: rgba(0, 0, 0, 0.6);
 
   --font-family-sans: 'Inter', sans-serif;
 }
@@ -25,23 +22,37 @@
 body {
   font-family: var(--font-family-sans);
   background-color: var(--color-page);
+  background-image: radial-gradient(50% 50% at 50% 50%, #0a0a20 0%, #000000 100%);
+  background-attachment: fixed;
   color: var(--color-text-base);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
 
-/* Utilities for gradient masks (still needed for overlays) */
-@utility mask-fade-top {
+/* Base utility mask classes */
+.mask-fade-top {
   mask-image: linear-gradient(to bottom, transparent, black 15%);
   -webkit-mask-image: linear-gradient(to bottom, transparent, black 15%);
 }
 
-@utility mask-fade-bottom {
+.mask-fade-bottom {
   mask-image: linear-gradient(to top, transparent, black 50%);
   -webkit-mask-image: linear-gradient(to top, transparent, black 50%);
 }
 
-@utility mask-fade-top-small {
+.mask-fade-top-small {
   mask-image: linear-gradient(to bottom, transparent, black 30%);
   -webkit-mask-image: linear-gradient(to bottom, transparent, black 30%);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+button {
+  border: none;
+  background: none;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
 }

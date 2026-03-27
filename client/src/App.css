@@ -1,1 +1,11 @@
-/* Empty reset for App */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-content {
+  width: 100%;
+  padding-top: 4rem;
+}

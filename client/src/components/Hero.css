@@ -1,0 +1,153 @@
+.hero-container {
+  position: relative;
+  overflow: hidden;
+  padding-top: 8rem;
+  padding-bottom: 5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  max-width: 80rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+}
+
+@media (min-width: 640px) {
+  .hero-container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-container {
+    padding-top: 12rem;
+    padding-bottom: 8rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.hero-bg-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.hero-bg-img {
+  width: 800px;
+  height: 800px;
+  object-fit: cover;
+  mix-blend-mode: screen;
+  opacity: 0.5;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 56rem;
+}
+
+.hero-heading {
+  font-size: 3.75rem;
+  line-height: 1.1;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 640px) {
+  .hero-heading { font-size: 4.5rem; }
+}
+
+@media (min-width: 1024px) {
+  .hero-heading { font-size: 6rem; }
+}
+
+.hero-heading-break {
+  display: none;
+}
+@media (min-width: 640px) {
+  .hero-heading-break { display: block; }
+}
+
+.hero-subheading {
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 42rem;
+  margin: 0 auto 2.5rem;
+  line-height: 1.625;
+}
+
+@media (min-width: 640px) {
+  .hero-subheading { font-size: 1.25rem; }
+}
+
+.hero-actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .hero-actions { flex-direction: row; }
+}
+
+.hero-btn {
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+  width: 100%;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+}
+
+@media (min-width: 640px) {
+  .hero-btn { width: auto; }
+}
+
+.hero-fade-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 8rem;
+  background: linear-gradient(to top, #000000, transparent);
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Load Animations (Delay chaining) */
+.hero-heading, .hero-subheading, .hero-actions {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-content.is-mounted .hero-heading {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.1s;
+}
+
+.hero-content.is-mounted .hero-subheading {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.2s;
+}
+
+.hero-content.is-mounted .hero-actions {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.3s;
+}

@@ -1,0 +1,119 @@
+.pricing-section {
+  padding: 4rem 1rem;
+  max-width: 80rem;
+  margin: 0 auto;
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .pricing-section { padding: 4rem 1.5rem; }
+}
+
+@media (min-width: 1024px) {
+  .pricing-section { padding: 4rem 2rem; }
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .pricing-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+.pricing-card {
+  background-color: var(--color-inverse);
+  color: var(--color-text-inverse);
+  border-radius: 1rem;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  min-height: 25rem;
+  
+  /* Initial state for stagger animation */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animated-section.is-visible .pricing-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animated-section.is-visible .pricing-card-1 { transition-delay: 0.1s; }
+.animated-section.is-visible .pricing-card-2 { transition-delay: 0.2s; }
+
+.pricing-header {
+  margin-top: 2rem;
+}
+
+.pricing-tier-name {
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--color-text-inverse-muted);
+  margin-bottom: 0.5rem;
+}
+
+.pricing-price-spacer {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: transparent;
+}
+
+.pricing-price {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 1024px) {
+  .pricing-price { font-size: 3rem; }
+}
+
+.pricing-subtitle {
+  color: var(--color-text-inverse-muted);
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+}
+
+.pricing-footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.pricing-btn {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 0.75rem 2rem;
+  border-radius: 9999px;
+  font-size: 1.125rem;
+  font-weight: 600;
+  width: 100%;
+  transition: background-color 0.2s;
+}
+
+@media (min-width: 640px) {
+  .pricing-btn { width: auto; }
+}
+
+.pricing-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.pricing-terms {
+  color: var(--color-text-inverse-muted);
+  font-size: 0.875rem;
+}

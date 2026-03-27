@@ -1,26 +1,31 @@
 import React from 'react';
-import Header from './components/Header.jsx';
-import Hero from './components/Hero.jsx';
-import BentoGrid from './components/BentoGrid.jsx';
-import Stats from './components/Stats.jsx';
-import Pricing from './components/Pricing.jsx';
-import Gallery from './components/Gallery.jsx';
-import Benefits from './components/Benefits.jsx';
-import FAQ from './components/FAQ.jsx';
-import ContactForm from './components/ContactForm.jsx';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import BentoFeatures from './components/BentoFeatures';
+import Metrics from './components/Metrics';
+import Pricing from './components/Pricing';
+import WorkflowGallery from './components/WorkflowGallery';
+import FAQ from './components/FAQ';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
+import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <Hero />
-      <BentoGrid />
-      <Stats />
-      <Pricing />
-      <Gallery />
-      <Benefits />
-      <FAQ />
-      <ContactForm />
+    <div className="app-container">
+      <Navbar />
+      
+      <main className="main-content">
+        <Hero />
+        <BentoFeatures />
+        <Metrics />
+        <Pricing />
+        <WorkflowGallery />
+        <FAQ />
+        <Contact />
+      </main>
+      
+      <Footer />
     </div>
   );
 }
